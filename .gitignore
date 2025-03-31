@@ -1,0 +1,47 @@
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment (Render uses its own environment)
+venv/
+env/
+
+# Database files (if using SQLite locally)
+db.sqlite3
+*.log
+
+# Ignore sensitive environment files (use Render's Environment Variables instead)
+.env
+.env.local
+.env.development
+.env.production
+
+# Django-specific ignores
+**/migrations/**  # Only if you plan to regenerate them (otherwise, keep initial migrations)
+*.pyc
+*.pyo
+
+# Ignore compiled files
+*.so
+
+# Static and media files (handled separately in Render)
+staticfiles/
+media/
+
+# Node modules (if any frontend dependencies exist)
+node_modules/
+
+# Build and dependency management
+dist/
+build/
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System-specific files
+.DS_Store
+Thumbs.db
