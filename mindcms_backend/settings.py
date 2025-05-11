@@ -105,13 +105,12 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY", "tgp_v1_QdavwTK80YzPTG3tCj-ZqctYk7_8P_PM9zZvbKQISgc")
 
-<<<<<<< HEAD
+
 # Together AI API Key (Loaded from .env)
 TOGETHER_API_KEY = "tgp_v1_QdavwTK80YzPTG3tCj-ZqctYk7_8P_PM9zZvbKQISgc"  # ⚠ Hardcoded API Key (Not Recommended)
 
 # Installed apps
-=======
->>>>>>> 2238b225a04f077ba0b53acd724ca70a5c885fce
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",

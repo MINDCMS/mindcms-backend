@@ -75,7 +75,7 @@ def generate_blog(request):
     return JsonResponse({"error": "Invalid request method"}, status=405)
 
 
-<<<<<<< HEAD
+
 genai.configure(api_key="AIzaSyCw9bcdboum1TOw85ZSVCy_xp_XWJdHKtU")
 
 # Step 2: Load the Gemini model (or any valid model)
@@ -96,7 +96,13 @@ def generate_caption(request):
 
             # Send response back to the client with the generated captions
             captions = response.text.strip().split("\n")  # Split by new lines if multiple captions are generated
-=======
+            return JsonResponse({"captions": captions}, status=200)
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+    
+    return JsonResponse({"error": "Invalid request method"}, status=405)
+
 # genai.configure(api_key="AIzaSyCw9bcdboum1TOw85ZSVCy_xp_XWJdHKtU")
 
 # # Step 2: Load the Gemini model (or any valid model)
@@ -153,7 +159,7 @@ def generate_caption(request):
             prompt = f"Generate {n} creative captions for this vibe: '{vibe}'"
             response = model.generate_content(prompt)
             captions = response.text.strip().split("\n")
->>>>>>> 2238b225a04f077ba0b53acd724ca70a5c885fce
+
 
             return JsonResponse({"captions": captions}, status=200)
 
@@ -163,8 +169,7 @@ def generate_caption(request):
     return JsonResponse({"error": "Invalid request method"}, status=405)
 
 
-<<<<<<< HEAD
-=======
+
 
 
 
@@ -242,7 +247,7 @@ from diffusers import StableDiffusionPipeline
 
 
 
->>>>>>> 2238b225a04f077ba0b53acd724ca70a5c885fce
+
 class CFG:
     device = "cuda"
     seed = 42
@@ -255,11 +260,11 @@ class CFG:
     prompt_dataset_size = 6
     prompt_max_length = 12
 
-<<<<<<< HEAD
+
 # --- Load the model once ---
-=======
+
 # Load the model once
->>>>>>> 2238b225a04f077ba0b53acd724ca70a5c885fce
+
 image_gen_model = StableDiffusionPipeline.from_pretrained(
     CFG.image_gen_model_id,
     torch_dtype=torch.float16,
@@ -269,11 +274,11 @@ image_gen_model = StableDiffusionPipeline.from_pretrained(
 )
 image_gen_model = image_gen_model.to(CFG.device)
 
-<<<<<<< HEAD
+
 # --- Image generation function ---
-=======
+
 # Image generation function
->>>>>>> 2238b225a04f077ba0b53acd724ca70a5c885fce
+
 def generate_image(prompt, model):
     image = model(
         prompt,
@@ -285,18 +290,18 @@ def generate_image(prompt, model):
     image = image.resize(CFG.image_gen_size)
     return image
 
-<<<<<<< HEAD
+
 # --- View to handle requests ---
 @csrf_exempt
 def generate_image_api(request):
     if request.method == "POST":
         import json
-=======
+
 # View to handle image generation API requests
 @csrf_exempt
 def generate_image_api(request):
     if request.method == "POST":
->>>>>>> 2238b225a04f077ba0b53acd724ca70a5c885fce
+
         data = json.loads(request.body)
         prompt = data.get("prompt")
 
@@ -314,7 +319,7 @@ def generate_image_api(request):
             return JsonResponse({"error": str(e)}, status=500)
 
     return JsonResponse({"error": "Only POST method allowed"}, status=405)
-<<<<<<< HEAD
-=======
 
->>>>>>> 2238b225a04f077ba0b53acd724ca70a5c885fce
+
+
+
