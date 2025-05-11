@@ -15,7 +15,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 # Together AI API Key (Loaded from .env)
-TOGETHER_API_KEY = "c3441069361a55d818332d0c4c1460d1a8ba79235e60202411a62dcdfc033a3b"  # ⚠ Hardcoded API Key (Not Recommended)
+TOGETHER_API_KEY = "tgp_v1_QdavwTK80YzPTG3tCj-ZqctYk7_8P_PM9zZvbKQISgc"  # ⚠ Hardcoded API Key (Not Recommended)
 
 # Installed apps
 INSTALLED_APPS = [
